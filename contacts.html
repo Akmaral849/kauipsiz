@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Байланыс нөмірлері</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <p class="label">СЕНІҢ ЦИФРЛЫҚ ҚАУІПСІЗДІГІҢ</p>
+    <h1>Көмек сұраудан тартынба</h1>
+    <p>Егер интернетте қорлау, қудалау немесе қорқытуға тап болсаң, көмек сұраудан тартынба. Қазақстанда көмек алуға болатын мына байланыс нөмірлері бар:</p>
+
+    <div class="hotline">
+      <h2>111 — Балаларға көмек көрсету орталығы</h2>
+      <p>Балалардың құқықтарын қорғау, қиын жағдайларда кеңес пен қолдау алу үшін хабарласуға болады. Қоңырау тегін.</p>
+      <a class="btn call-btn" href="tel:111">📞 111 нөміріне қоңырау шалу</a>
+    </div>
+
+    <div class="hotline">
+      <h2>102 — Полиция</h2>
+      <p>Егер кибербуллинг қорқыту, бопсалау немесе басқа құқық бұзушылықтармен байланысты болса, полицияға хабарласуға болады.</p>
+      <a class="btn call-btn" href="tel:102">📞 102 нөміріне қоңырау шалу</a>
+    </div>
+
+    <div class="hotline">
+      <h2>112 — Шұғыл көмек қызметі</h2>
+      <p>Егер өміріңе немесе денсаулығыңа тікелей қауіп төніп тұрса, осы нөмірге қоңырау шал.</p>
+      <a class="btn call-btn" href="tel:112">📞 112 нөміріне қоңырау шалу</a>
+    </div>
+
+    <p class="strong">Есіңде болсын: кибербуллингке тап болсаң, бұл туралы сенімді ересек адамға айтуға және көмек сұрауға құқығың бар.</p>
+
+    <div class="hotline">
+      <h2>Бізге жаз</h2>
+      <p>Егер қоңырау шалғың келмесе, хат жібере аласың: <b>erkenazeskara@gmail.com</b></p>
+      <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=erkenazeskara@gmail.com" target="_blank">✉️ Gmail арқылы жазу</a>
+<a class="btn btn-alt" href="mailto:erkenazeskara@gmail.com">Басқа почта арқылы жазу</a>
+    </div>
+
+    <a class="back" href="help.html">← Артқа қайту</a>
+  </main>
+  <dialog id="confirm">
+  <h2>Қоңырау шалу алдында</h2>
+  <p>Сен <b id="num"></b> нөміріне қоңырау шалғалы жатырсың.</p>
+  <p>Бұл нөмірлер тек нақты көмек қажет болғанда ғана қолданылады. Ойын үшін немесе жалған қоңырау шалуға болмайды: сол кезде нағыз көмек қажет адам күтіп қалуы мүмкін.</p>
+  <p><b>Саған шынымен көмек керек пе?</b></p>
+  <div class="dialog-buttons">
+    <button id="yes" class="btn">Иә, қоңырау шаламын</button>
+    <button id="no" class="btn btn-alt">Жоқ, бас тарту</button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById("confirm");
+  const numText = document.getElementById("num");
+  let link = "";
+
+  document.querySelectorAll(".call-btn").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();               // не звоним сразу
+      link = btn.getAttribute("href");  // например tel:111
+      numText.textContent = link.replace("tel:", "");
+      dialog.showModal();               // показываем окно
+    });
+  });
+
+  document.getElementById("yes").addEventListener("click", function () {
+    dialog.close();
+    window.location.href = link;        // теперь звоним
+  });
+
+  document.getElementById("no").addEventListener("click", function () {
+    dialog.close();
+  });
+</script>
+</body>
+</html>

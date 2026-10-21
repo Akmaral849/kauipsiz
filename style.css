@@ -1,0 +1,253 @@
+:root{
+  --page-bg:#f1f4ec;
+  --card-bg:#2f3d2a;
+  --label:#b5d18a;
+  --text:#eef3e6;
+  --muted:#b9c4ae;
+  --btn-bg:#8fe3b0;
+  --btn-bg-hover:#a8efc3;
+  --btn-text:#14301f;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--card-bg);   /* было --page-bg, теперь тёмно-зелёный */
+  font-family:"Segoe UI", Arial, sans-serif;
+  line-height:1.6;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  width:100%;
+  max-width:900px;       /* можно сделать больше, например 1000px */
+  margin:0 auto;
+  background:transparent;  /* фона у карточки больше нет */
+  color:var(--text);
+  border-radius:0;
+  padding:32px 30px 26px;
+}
+
+.label{
+  margin:0 0 20px;
+  color:var(--label);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+
+.card h1{ margin:0 0 18px; font-size:40px; line-height:1.25; }
+.card p{ margin:0 0 18px; font-size:20px; }
+.card .strong{ font-weight:700; color:#fff; }
+
+.btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  text-decoration:none;
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  font-size:20px;
+  font-weight:700;
+  padding:22px;
+  border-radius:16px;
+  margin:24px 0 18px;
+  transition:background .2s;
+}
+.btn:hover{ background:var(--btn-bg-hover); }
+
+.footer-text{
+  margin:0;
+  text-align:center;
+  font-size:15px;
+  color:var(--muted);
+}
+.item{
+  background:rgba(255,255,255,.07);
+  border-radius:16px;
+  margin:0 0 14px;
+  overflow:hidden;
+}
+
+.item summary{
+  list-style:none;          /* убираем стандартный треугольник */
+  cursor:pointer;
+  padding:18px 54px 18px 20px;
+  position:relative;
+  transition:background .2s;
+}
+.item summary::-webkit-details-marker{ display:none; }
+.item summary:hover{ background:rgba(255,255,255,.06); }
+
+/* стрелочка справа */
+.item summary::after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:28px;
+  color:var(--btn-bg);
+}
+.item[open] summary::after{ content:"–"; }
+
+.tag{
+  display:block;
+  margin-bottom:6px;
+  color:var(--label);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.q{
+  display:block;
+  font-size:17px;
+  font-weight:600;
+}
+
+.answer{
+  padding:4px 20px 22px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.answer h2{
+  margin:18px 0 10px;
+  font-size:20px;
+  color:var(--btn-bg);
+}
+.answer ol{
+  margin:0;
+  padding-left:22px;
+}
+.answer li{
+  margin:0 0 10px;
+  font-size:16px;
+}
+.answer li b{ color:#fff; }
+
+.back{
+  display:block;
+  margin-top:24px;
+  text-align:center;
+  color:var(--muted);
+  text-decoration:none;
+}
+.back:hover{ color:var(--text); }
+.hotline{
+  background:rgba(255,255,255,.07);
+  border-radius:16px;
+  padding:20px;
+  margin:0 0 16px;
+}
+.hotline h2{
+  margin:0 0 8px;
+  font-size:20px;
+  color:var(--btn-bg);
+}
+.hotline p{ margin:0 0 6px; font-size:16px; }
+.hotline .btn{ margin:14px 0 0; }
+
+.btn-alt{
+  background:transparent;
+  color:var(--btn-bg);
+  border:2px solid var(--btn-bg);
+}
+.btn-alt:hover{ background:rgba(143,227,176,.15); }
+dialog{
+  max-width:480px;
+  width:calc(100% - 32px);
+  border:none;
+  border-radius:20px;
+  padding:26px 24px;
+  background:var(--card-bg);
+  color:var(--text);
+  font-family:"Segoe UI", Arial, sans-serif;
+  line-height:1.6;
+  border:2px solid var(--btn-bg);
+}
+dialog::backdrop{ background:rgba(0,0,0,.6); }
+dialog h2{ margin:0 0 12px; color:var(--btn-bg); }
+dialog p{ margin:0 0 12px; font-size:16px; }
+.dialog-buttons{ display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+.dialog-buttons .btn{ margin:0; cursor:pointer; font-family:inherit; border:none; }
+.dialog-buttons .btn-alt{ border:2px solid var(--btn-bg); }
+@media (max-width:520px){
+  .card{ padding:24px 20px 20px; margin:0 auto; }
+  .card h1{ font-size:24px; }
+}
+.item{
+  background:rgba(255,255,255,.07);
+  border-radius:16px;
+  margin:0 0 14px;
+  overflow:hidden;
+}
+
+.item summary{
+  list-style:none;          /* убираем стандартный треугольник */
+  cursor:pointer;
+  padding:18px 54px 18px 20px;
+  position:relative;
+  transition:background .2s;
+}
+.item summary::-webkit-details-marker{ display:none; }
+.item summary:hover{ background:rgba(255,255,255,.06); }
+
+/* стрелочка справа */
+.item summary::after{
+  content:"+";
+  position:absolute;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:28px;
+  color:var(--btn-bg);
+}
+.item[open] summary::after{ content:"–"; }
+
+.tag{
+  display:block;
+  margin-bottom:6px;
+  color:var(--label);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.q{
+  display:block;
+  font-size:17px;
+  font-weight:600;
+}
+
+.answer{
+  padding:4px 20px 22px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.answer h2{
+  margin:18px 0 10px;
+  font-size:20px;
+  color:var(--btn-bg);
+}
+.answer ol{
+  margin:0;
+  padding-left:22px;
+}
+.answer li{
+  margin:0 0 10px;
+  font-size:16px;
+}
+.answer li b{ color:#fff; }
+
+.back{
+  display:block;
+  margin-top:24px;
+  text-align:center;
+  color:var(--muted);
+  text-decoration:none;
+}
+.back:hover{ color:var(--text); }
